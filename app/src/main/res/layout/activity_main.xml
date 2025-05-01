@@ -1,0 +1,189 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- IMAGE TO TEXT HEADER -->
+        <TextView
+            android:id="@+id/headerImageToText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IMAGE TO TEXT"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#1976D2"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:gravity="center" />
+
+        <!-- IMAGE TO TEXT CONTENT -->
+        <LinearLayout
+            android:id="@+id/sectionImageToText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take Photo"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose from Gallery"
+                android:backgroundTint="#FFC107"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:background="#E0E0E0" />
+
+            <TextView
+                android:id="@+id/prediction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prediction will appear here"
+                android:textColor="#444444"
+                android:textStyle="italic"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- TEXT TO IMAGE HEADER -->
+        <TextView
+            android:id="@+id/headerTextToImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEXT TO IMAGE"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#1976D2"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:gravity="center"
+            android:layout_marginTop="24dp" />
+
+        <!-- TEXT TO IMAGE CONTENT -->
+        <LinearLayout
+            android:id="@+id/sectionTextToImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/inputAlphabet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter alphabet or word"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/btnShowSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Sign"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="14dp" />
+
+            <ImageView
+                android:id="@+id/signImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/signContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- AUDIO TO TEXT HEADER -->
+        <TextView
+            android:id="@+id/headerAudioToText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AUDIO TO TEXT"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#1976D2"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:gravity="center"
+            android:layout_marginTop="24dp" />
+
+        <!-- AUDIO TO TEXT CONTENT -->
+        <LinearLayout
+            android:id="@+id/sectionAudioToText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your speech will appear here"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:gravity="center" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/signContainer_audio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp" />
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/startBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Listening"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
