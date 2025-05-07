@@ -9,6 +9,31 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Profile"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:backgroundTint="#D32F2F"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="right"
+            android:textColor="#FFFFFF"/>
+        </LinearLayout>
 
         <!-- IMAGE TO TEXT HEADER -->
         <TextView
@@ -137,7 +162,7 @@
             android:id="@+id/headerAudioToText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="AUDIO TO TEXT"
+            android:text="AUDIO TO IMAGE"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#1976D2"

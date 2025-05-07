@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "673390500846",
+    "project_id": "sign-lang-e7c0a",
+    "storage_bucket": "sign-lang-e7c0a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673390500846:android:8bfdef1c2699c246550cff",
+        "android_client_info": {
+          "package_name": "com.nevaloss.sign_lang_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr4GSGF5vva7OlWiPyk1F-7gor4Zh3f-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

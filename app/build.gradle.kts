@@ -2,6 +2,9 @@ import com.android.build.api.dsl.Packaging
 
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
+    // Add Kotlin plugin if using Kotlin
+    //id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -60,4 +63,11 @@ dependencies {
     implementation ("org.tensorflow:tensorflow-lite:2.8.0") // TensorFlow Lite version
     // If using GPU or hardware acceleration:
     implementation ("org.tensorflow:tensorflow-lite-gpu:2.8.0")
+    //implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation("com.google.firebase:firebase-analytics:21.5.1") // optional
+    //implementation ("com.google.firebase:firebase-database:20.3.0")
+//    implementation ("com.google.firebase:firebase-auth:21.0.0")
+//    implementation ("com.google.firebase:firebase-database:20.0.3")
+    implementation ("com.google.firebase:firebase-auth:21.0.1")
+    implementation ("com.google.firebase:firebase-database:20.0.5")
 }

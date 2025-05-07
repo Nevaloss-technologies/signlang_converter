@@ -32,6 +32,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.tensorflow.lite.Interpreter;
 
 import java.io.File;
@@ -84,6 +86,29 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout sectionImage = findViewById(R.id.sectionImageToText);
         LinearLayout sectionText = findViewById(R.id.sectionTextToImage);
         LinearLayout sectionAudio = findViewById(R.id.sectionAudioToText);
+        Button btnLogout = findViewById(R.id.btnLogout);
+        Button btnProfile = findViewById(R.id.btnProfile);
+
+        btnLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+
+            // Optional: Show toast
+            Toast.makeText(MainActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+
+            // Navigate back to login screen
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // clear backstack
+            startActivity(intent);
+        });
+
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+            }
+        });
 
         headerImage.setOnClickListener(v -> {
             sectionImage.setVisibility(View.VISIBLE);
@@ -208,6 +233,15 @@ public class MainActivity extends AppCompatActivity {
             @Override public void onEvent(int eventType, Bundle params) {}
         });
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() == null) {
+            startActivity(new Intent(this, Login.class));
+            finish();
+        }
     }
 
     private void displaySignImagesFromSpeech(String spokenText) {
